@@ -1,0 +1,26 @@
+TSResult
+- ID
+- Site
+- UserId
+- Date Fetched
+- Rollup
+- AnswerRequests
+- QuestionRequests
+- CommentRequests
+- VoteRequests
+
+TSPeriod
+- ID
+- TSResultID
+- Date
+- Tag
+- AnswerCount
+- QuestionCount
+- CommentCount
+- VoteCount
+
+Question
+- ID
+- Site
+- QuestionId
+- TagsList

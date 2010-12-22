@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz", "StackTagz\StackTagz.csproj", "{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Test", "StackTagz.Test\StackTagz.Test.csproj", "{B3C8E08A-211B-4A0F-B3E3-12A41C49B099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Summarizer", "StackTagz.Summarizer\StackTagz.Summarizer.csproj", "{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.ServerRepository.Test", "StackTagz.ServerRepository.Test\StackTagz.ServerRepository.Test.csproj", "{AF9EC71A-B002-4368-8873-E96FB50F646E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEF6BD27-A954-46C9-848E-E76A5EBB51D4}"
+	ProjectSection(SolutionItems) = preProject
+		data schema.txt = data schema.txt
+		Features.txt = Features.txt
+		Local.testsettings = Local.testsettings
+		StackTagz.vsmdi = StackTagz.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Infrastructure", "StackTagz.Infrastructure\StackTagz.Infrastructure.csproj", "{B0B302E8-3A75-4DCB-B771-829EEA07D351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Model", "StackTagz.Model\StackTagz.Model.csproj", "{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Infrastructure.Test", "StackTagz.Infrastructure.Test\StackTagz.Infrastructure.Test.csproj", "{EC3BC853-3A57-4FF7-910A-AC2CCE4863B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Model.Test", "StackTagz.Model.Test\StackTagz.Model.Test.csproj", "{7E7E5BFC-D708-4E7B-975D-8F898F47D3BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.SqlRepository", "StackTagz.SqlRepository\StackTagz.SqlRepository.csproj", "{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.SqlRepository.Test", "StackTagz.SqlRepository.Test\StackTagz.SqlRepository.Test.csproj", "{A87D5015-3654-4D4E-87A4-1BD80F81CF4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.ServerRepository", "StackTagz.ServerRepository\StackTagz.ServerRepository.csproj", "{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTagz.Summarizer.Test", "StackTagz.Summarizer.Test\StackTagz.Summarizer.Test.csproj", "{2741FEB1-876E-41AE-A41E-A8DF611148D8}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = StackTagz.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C8E08A-211B-4A0F-B3E3-12A41C49B099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C8E08A-211B-4A0F-B3E3-12A41C49B099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C8E08A-211B-4A0F-B3E3-12A41C49B099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C8E08A-211B-4A0F-B3E3-12A41C49B099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF9EC71A-B002-4368-8873-E96FB50F646E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF9EC71A-B002-4368-8873-E96FB50F646E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF9EC71A-B002-4368-8873-E96FB50F646E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF9EC71A-B002-4368-8873-E96FB50F646E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B302E8-3A75-4DCB-B771-829EEA07D351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B302E8-3A75-4DCB-B771-829EEA07D351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B302E8-3A75-4DCB-B771-829EEA07D351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B302E8-3A75-4DCB-B771-829EEA07D351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3BC853-3A57-4FF7-910A-AC2CCE4863B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3BC853-3A57-4FF7-910A-AC2CCE4863B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3BC853-3A57-4FF7-910A-AC2CCE4863B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3BC853-3A57-4FF7-910A-AC2CCE4863B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7E5BFC-D708-4E7B-975D-8F898F47D3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7E5BFC-D708-4E7B-975D-8F898F47D3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7E5BFC-D708-4E7B-975D-8F898F47D3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7E5BFC-D708-4E7B-975D-8F898F47D3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87D5015-3654-4D4E-87A4-1BD80F81CF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87D5015-3654-4D4E-87A4-1BD80F81CF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87D5015-3654-4D4E-87A4-1BD80F81CF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87D5015-3654-4D4E-87A4-1BD80F81CF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2741FEB1-876E-41AE-A41E-A8DF611148D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2741FEB1-876E-41AE-A41E-A8DF611148D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2741FEB1-876E-41AE-A41E-A8DF611148D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2741FEB1-876E-41AE-A41E-A8DF611148D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

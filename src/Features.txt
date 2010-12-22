@@ -1,0 +1,16 @@
+Features that could be added 
+- Remove passwords and upload to github.
+- Deployment - precompile and encrypt web.config. No-click deploy.
+- Improve comments performance.
+- Count number of requests per TS
+- Fix reputation rounding
+- Top up old cached requests.
+
+Phase 2
+- Name-value store for caching. Cassandra, redis etc.
+- THINK Exception handling around server requests.
+- Click tag to hide
+- Clean up JS, maybe create jquery controls for autocomplete boxes
+- Asynchronous processing, at the TimeSeriesRepository level.
+- WebRequest pooling, brobably through implementing IUrlClient
+

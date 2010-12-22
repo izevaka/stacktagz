@@ -1,0 +1,56 @@
+﻿<%@ Import Namespace="SquishIt.Framework" %>
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="google-site-verification" content="hqxmCUlBVZXdhhVcVTv5hfrrRXtZcOX1YvBrbyJcnl4" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    
+    <%= Bundle.Css()
+        .Add("~/Content/jqplot/jquery.jqplot.css")
+        .Add("~/Content/jquery-ui-1.8.2.custom/css/cupertino/jquery-ui-1.8.2.custom.css")
+        .Add("~/Content/Site.css")  
+        .Render("~/Content/minified/combined_#.css")%>
+    
+    <%= Bundle.JavaScript()
+        .Add("~/Content/jquery-1.4.2.js") 
+        .Add("~/Content/jquery.blockUI.js")
+        .Add("~/Content/jqplot/jquery.jqplot.js")
+        .Add("~/Content/jqplot/plugins/jqplot.dateAxisRenderer.min.js")
+        .Add("~/Content/jqplot/plugins/jqplot.highlighter.js")
+        .Add("~/Content/jquery-ui-1.8.2.custom/development-bundle/ui/jquery-ui-1.8.2.custom.js")
+        .Add("~/Content/JSLinq/scripts/JSLINQ.js")
+        .Add("~/Content/jquery.address-1.2.1/jquery.address-1.2.1.min.js")
+        .Add("~/Content/site.js")
+        .Render("~/Content/minified/combined_#.js")%>
+    
+    <!--[if IE]><script language="javascript" type="text/javascript" src="<%=Url.Content("~/Content/jqplot/excanvas.js")%>"></script><![endif]-->
+
+</head>
+
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <a href="<%=Url.Content("~")%>"><span><img src="<%=Url.Content("~/stacktagz.png")%>"/><em>StackTagz</em></span></a>
+            </div>
+            
+            <div id="menucontainer">
+                <ul id="menu">              
+                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
+                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

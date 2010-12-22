@@ -1,0 +1,522 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+	background-color:#e6e5e9;	
+	font-size: .75em;
+	margin: 0;
+	padding: 0;
+	color: #696969;
+}
+
+body, input {
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+#main .normaltext p{
+	font-size: 14px;
+}
+
+a:link
+{
+	color: #034af3;
+	text-decoration: underline;
+}
+a:visited
+{
+	color: #505abc;
+}
+a:hover
+{
+	color: #1d60ff;
+	text-decoration: none;
+}
+a:active
+{
+	color: #12eb87;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+	font-size: 1.5em;	
+}
+
+h1
+{
+	font-size: 2em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+h2
+{
+	padding: 0 0 10px 0;
+}
+h3
+{
+	font-size: 1.2em;
+}
+h4
+{
+	font-size: 1.1em;
+}
+h5, h6
+{
+	font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+	margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header
+{
+	position: relative;
+	margin-bottom: 0px;
+	padding: 0;
+	padding-top: 30px;
+}
+
+#header em
+{
+	position: absolute;
+	font-weight: bold;
+	border: none;
+	font-size: 50px !important;
+	font-style:normal;
+	line-height: 50px;
+	margin-top:10px;
+	padding-left: 10px;
+}
+
+#main
+{
+	background-color: #FFF;
+	/*background-color: #ccccff;*/
+	margin: 10px auto;
+	_height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+	border: thin solid #5c87b2;
+	padding: 10px;
+	
+}
+
+#main p, #main input, #main label, #stackcaption,.mainuserdetails div {
+	font-size: 18px;
+	margin-bottom: 2px;
+	padding: 3px;
+	margin-top: 2px;
+}
+
+#userinput {
+	margin: 0 auto;	
+	position: relative;
+}
+#userinput input{
+	border: 1px solid #CCC;
+	width: 280px;
+}
+/*
+button.ui-button-icon-only {
+	padding:3px;
+	top:2px;
+	height:35px;
+}
+
+button.ui-widget {
+	font-size: 18px;
+	line-height: 18px;
+}
+*/
+#footer
+{
+	color: #999;
+	padding: 10px 0;
+	text-align: center;
+	line-height: normal;
+	margin: 0;
+	font-size: .9em;
+}
+
+#graphandstack {
+	position: relative;
+}
+
+#graph, #tagstack {
+	margin: 20px 0 20px 0;
+	height: 410px;
+}
+
+#graph {
+	width: 450px;
+	border: solid #CCC thin;
+	float: left;
+}
+
+#tagstack {
+	float: right;
+	width: 350px;
+	height: 332px;
+	position: relative;
+	
+}
+
+#tagstackinner {
+	position: absolute;
+	bottom: 0px;
+}
+
+#tagstack .animated {
+	display:none;
+}
+
+#summary {
+	clear: both;
+}
+#tagstackinner div{
+	margin:15px ;
+	width: 300px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#stackcaption {
+	text-align: center;
+}
+
+
+#tagstackinner span
+{
+	margin:5px;
+	padding:0;
+	text-align: center;
+	cursor: default;
+	font-size: 14px;
+	display: inline;
+	list-style: none;
+	border: 1px solid grey;
+	padding: 3px 6px;
+	color:Black;
+	
+}
+
+#tagstackinner .level1 span{
+	
+}
+#tagstackinner .level2 span{
+	
+}
+#tagstackinner .level3 span{
+	
+}
+
+.siteimg, .mainuserdetails div span{
+	display: none;
+}
+.mainuserdetails div .userinfo{
+	position: absolute;
+	bottom: 5px;
+}
+
+.sitedetails {
+	width: 350px;
+	float:left;
+}
+
+.userinfo img {
+	width: 60px;
+	height: 60px;
+}
+
+.mainuserdetails {
+	width: 500px;
+	float: right;
+}
+
+.sitedetails div, .mainuserdetails div{
+	height: 70px;
+	padding:0;
+	margin :0;
+	position: relative;
+}
+
+#sitedetails label {
+	float:left;
+}
+
+.rep,.badge {
+	font-weight: bold;
+	font-size: 120%;
+	padding-right: 2px;
+}
+
+.bullet {
+	padding-right: 2px;
+}
+
+.gold {
+	color: #FC0;
+}
+
+.silver {
+	color:Silver;
+}
+
+.bronze {
+	color: #C96;
+}
+#main .normaltext table *,#main .normaltext table {
+	border-width: 2px;
+}
+
+#main .normaltext table tr>td:first-child {
+	font-size:16px; font-weight:bold;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+	padding: 0 0 2px;
+	position: relative;
+	margin: 0;
+	text-align: right;
+}
+
+ul#menu li
+{
+	display: inline;
+	list-style: none;
+}
+
+ul#menu li#greeting
+{
+	padding: 10px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	color: #fff;
+}
+ul#menu li a {
+	text-decoration: none;
+	color: #2779AA;
+}
+ul#menu li a:active {
+	text-decoration: none;
+	color: #2779AA;
+}
+/*
+ul#menu li a
+{
+	padding: 10px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	background-color: #e8eef4;
+	color: #034af3;
+}
+
+ul#menu li a:hover
+{
+	background-color: #fff;
+	text-decoration: none;
+}
+
+ul#menu li a:active
+{
+	background-color: #a6e2a6;
+	text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+	background-color: #fff;
+	color: #000;
+}
+*/
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+	margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+	font-size: 1.1em;
+	font-weight: 600;
+	padding: 2px 4px 8px 4px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+	clear: both;
+}
+
+.error
+{
+	color:Red;
+}
+
+#menucontainer
+{
+	margin-top:40px;
+}
+
+div#title
+{
+	display:block;
+	float:left;
+	text-align:left;
+}
+div#title a,div#title img
+{
+	text-decoration: none;
+	color: #696969;
+	border: none;
+}
+#logindisplay
+{
+	font-size:1.1em;
+	display:block;
+	text-align:right;
+	margin:10px;
+	color:White;
+}
+
+#logindisplay a:link
+{
+	color: white;
+	text-decoration: underline;
+}
+
+#logindisplay a:visited
+{
+	color: white;
+	text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+	color: white;
+	text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+	color: #ff0000;
+}
+
+.field-validation-valid
+{
+	display: none;
+}
+
+.input-validation-error
+{
+	border: 1px solid #ff0000;
+	background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.validation-summary-valid
+{
+	display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+	margin: 0.5em 0;
+}
+
+.text-box
+{
+	width: 30em;
+}
+
+.text-box.multi-line
+{
+	height: 6.5em;
+}
+
+.tri-state
+{
+	width: 6em;
+}
+
+#graph 
+{
+	height: 320px;
+	width: 480px;
+}
+
+.growlUI h1{
+	font-size: 16px;
+}
+.growlUI h2 {
+	font-size: 14px;
+}

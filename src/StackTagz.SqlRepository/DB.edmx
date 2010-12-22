@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="stacktagzModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="stacktagzModelStoreContainer">
+          <EntitySet Name="Question" EntityType="stacktagzModel.Store.Question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TSPeriod" EntityType="stacktagzModel.Store.TSPeriod" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TSResult" EntityType="stacktagzModel.Store.TSResult" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_TSPeriod_TSResult" Association="stacktagzModel.Store.FK_TSPeriod_TSResult">
+            <End Role="TSResult" EntitySet="TSResult" />
+            <End Role="TSPeriod" EntitySet="TSPeriod" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Site" Type="nvarchar" Nullable="false" MaxLength="400" />
+          <Property Name="QuestionId" Type="int" Nullable="false" />
+          <Property Name="TagsList" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="TSPeriod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TSResultId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="tag" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AnswerCount" Type="int" Nullable="false" />
+          <Property Name="QuestionCount" Type="int" Nullable="false" />
+          <Property Name="CommentCount" Type="int" Nullable="false" />
+          <Property Name="VoteCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TSResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Site" Type="nvarchar" Nullable="false" MaxLength="400" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LastFetched" Type="datetime" Nullable="false" />
+          <Property Name="Rollup" Type="int" Nullable="false" />
+          <Property Name="AnswerRequests" Type="int" Nullable="false" />
+          <Property Name="QuestionRequests" Type="int" Nullable="false" />
+          <Property Name="CommentsRequests" Type="int" Nullable="false" />
+          <Property Name="VoteRequests" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TSPeriod_TSResult">
+          <End Role="TSResult" Type="stacktagzModel.Store.TSResult" Multiplicity="1" />
+          <End Role="TSPeriod" Type="stacktagzModel.Store.TSPeriod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSResult">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TSPeriod">
+              <PropertyRef Name="TSResultId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="stacktagzModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="stacktagzEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TSPeriods" EntityType="stacktagzModel.TSPeriod" />
+          <EntitySet Name="TSResults" EntityType="stacktagzModel.TSResult" />
+          <AssociationSet Name="FK_TSPeriod_TSResult" Association="stacktagzModel.FK_TSPeriod_TSResult">
+            <End Role="TSResult" EntitySet="TSResults" />
+            <End Role="TSPeriod" EntitySet="TSPeriods" />
+          </AssociationSet>
+          <EntitySet Name="Questions" EntityType="stacktagzModel.Question" />
+        </EntityContainer>
+        <EntityType Name="TSPeriod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TSResultId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="tag" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AnswerCount" Type="Int32" Nullable="false" />
+          <Property Name="QuestionCount" Type="Int32" Nullable="false" />
+          <Property Name="CommentCount" Type="Int32" Nullable="false" />
+          <Property Name="VoteCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TSResult" Relationship="stacktagzModel.FK_TSPeriod_TSResult" FromRole="TSPeriod" ToRole="TSResult" />
+        </EntityType>
+        <EntityType Name="TSResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Site" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="LastFetched" Type="DateTime" Nullable="false" />
+          <Property Name="Rollup" Type="Int32" Nullable="false" />
+          <Property Name="AnswerRequests" Type="Int32" Nullable="false" />
+          <Property Name="QuestionRequests" Type="Int32" Nullable="false" />
+          <Property Name="CommentsRequests" Type="Int32" Nullable="false" />
+          <Property Name="VoteRequests" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TSPeriods" Relationship="stacktagzModel.FK_TSPeriod_TSResult" FromRole="TSResult" ToRole="TSPeriod" />
+        </EntityType>
+        <Association Name="FK_TSPeriod_TSResult">
+          <End Role="TSResult" Type="stacktagzModel.TSResult" Multiplicity="1" />
+          <End Role="TSPeriod" Type="stacktagzModel.TSPeriod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSResult">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TSPeriod">
+              <PropertyRef Name="TSResultId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Site" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="String" Name="TagsList" MaxLength="1024" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="stacktagzModelStoreContainer" CdmEntityContainer="stacktagzEntities">
+          <EntitySetMapping Name="TSPeriods"><EntityTypeMapping TypeName="stacktagzModel.TSPeriod"><MappingFragment StoreEntitySet="TSPeriod">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="TSResultId" ColumnName="TSResultId" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="tag" ColumnName="tag" />
+            <ScalarProperty Name="AnswerCount" ColumnName="AnswerCount" />
+            <ScalarProperty Name="QuestionCount" ColumnName="QuestionCount" />
+            <ScalarProperty Name="CommentCount" ColumnName="CommentCount" />
+            <ScalarProperty Name="VoteCount" ColumnName="VoteCount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TSResults"><EntityTypeMapping TypeName="stacktagzModel.TSResult"><MappingFragment StoreEntitySet="TSResult">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Site" ColumnName="Site" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="LastFetched" ColumnName="LastFetched" />
+            <ScalarProperty Name="Rollup" ColumnName="Rollup" />
+            <ScalarProperty Name="AnswerRequests" ColumnName="AnswerRequests" />
+            <ScalarProperty Name="QuestionRequests" ColumnName="QuestionRequests" />
+            <ScalarProperty Name="CommentsRequests" ColumnName="CommentsRequests" />
+            <ScalarProperty Name="VoteRequests" ColumnName="VoteRequests" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="stacktagzModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="TagsList" ColumnName="TagsList" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DB">
+        <EntityTypeShape EntityType="stacktagzModel.TSPeriod" Width="1.5" PointX="3" PointY="1.125" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="stacktagzModel.TSResult" Width="1.5" PointX="0.75" PointY="1" Height="2.9417936197916656" IsExpanded="true" />
+        <AssociationConnector Association="stacktagzModel.FK_TSPeriod_TSResult" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.49974609375" />
+          <ConnectorPoint PointX="3" PointY="2.49974609375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="stacktagzModel.Question" Width="1.5" PointX="0.75" PointY="4.75" Height="1.9802864583333335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

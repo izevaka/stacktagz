@@ -1,0 +1,10 @@
+bin
+Bin
+obj
+Obj
+test
+*.suo
+TestResults
+bin
+staging
+StackTagz.Publish.xml

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98644DD0-5AB5-4CAC-8D83-CCB8EEEFE234}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StackTagz</RootNamespace>
+    <AssemblyName>StackTagz</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <DeployIisAppPath>Default Web Site/stacktagz</DeployIisAppPath>
+    <DeployEncryptKey>stacktagz1%24</DeployEncryptKey>
+    <PublishDatabases>false</PublishDatabases>
+    <MvcBuildViews>true</MvcBuildViews>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <IncludeAppPool>true</IncludeAppPool>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\lib\common-logging-2.0.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\..\lib\common-logging-2.0.0\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net-1.2.10\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Json.NET\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebug">
+      <HintPath>..\..\lib\RouteDebug\RouteDebug.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\..\lib\SquishIt\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControllerFactory.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IErrorController.cs" />
+    <Compile Include="Controllers\NullController.cs" />
+    <Compile Include="Converters\SafeStringConverter.cs" />
+    <Compile Include="Converters\TimeseriesConverter.cs" />
+    <Compile Include="Converters\TimeseriesPeriodConverter.cs" />
+    <Compile Include="Converters\TimeseriesResultConverter.cs" />
+    <Compile Include="CacheWrapper.cs" />
+    <Compile Include="Filters\ThrottleAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\jqplot-logo.jpg" />
+    <Content Include="Content\jqplot\excanvas.js" />
+    <Content Include="Content\jqplot\jquery.jqplot.css" />
+    <Content Include="Content\jqplot\jquery.jqplot.js" />
+    <Content Include="Content\jqplot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Content\jqplot\plugins\jqplot.highlighter.js" />
+    <Content Include="Content\jquery-1.4.2.js" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\css\cupertino\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Content\jquery-ui-1.8.2.custom\development-bundle\ui\jquery-ui-1.8.2.custom.js" />
+    <Content Include="Content\jquery.address-1.2.1\jquery.address-1.2.1.js" />
+    <Content Include="Content\jquery.address-1.2.1\jquery.address-1.2.1.min.js" />
+    <Content Include="Content\jquery.blockUI.js" />
+    <Content Include="Content\jquery_logo_color_onwhite.png" />
+    <Content Include="Content\JQuery_UI_Logo.png" />
+    <Content Include="Content\JSLinq\scripts\JSLINQ-vsdoc.js" />
+    <Content Include="Content\JSLinq\scripts\JSLINQ.js" />
+    <Content Include="Content\minified\combined_E4CA9D267CA7D3A103B318DE560BC9A8.js" />
+    <Content Include="Content\minified\combined_FEF3DD89352D0FD748C985953358CCA8.css" />
+    <Content Include="Content\site.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
+    <Content Include="StackTagz.Model.csproj" />
+    <Content Include="stacktagz.png" />
+    <Content Include="Views\Error\NotFound.aspx" />
+    <Content Include="Views\Error\ApplicationError.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StackTagz.Infrastructure\StackTagz.Infrastructure.csproj">
+      <Project>{B0B302E8-3A75-4DCB-B771-829EEA07D351}</Project>
+      <Name>StackTagz.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackTagz.Model\StackTagz.Model.csproj">
+      <Project>{4D7A2BBE-46FA-47A9-857B-8748A3D30D2B}</Project>
+      <Name>StackTagz.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackTagz.Summarizer\StackTagz.Summarizer.csproj">
+      <Project>{E4D6C8E4-03CD-4C46-80BD-C2E0607EC2CF}</Project>
+      <Name>StackTagz.Summarizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackTagz.ServerRepository\StackTagz.ServerRepository.csproj">
+      <Project>{21B86EBB-3D1C-4282-9FFC-DCC5EA1EFED8}</Project>
+      <Name>StackTagz.ServerRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackTagz.SqlRepository\StackTagz.SqlRepository.csproj">
+      <Project>{9DC1DE8F-36AD-41C8-80BF-86338DE1D267}</Project>
+      <Name>StackTagz.SqlRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="/stacktagz" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>36530</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/StackTagz</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
